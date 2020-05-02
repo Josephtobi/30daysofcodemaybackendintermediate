@@ -1,0 +1,18 @@
+def scrabble(s1,s2):
+  '''taking 2 strings we check if we can create the second string from the first
+  returning a boolen
+  '''
+  
+    count=[]
+    for i in s2:
+      if i not in s1:
+        count.append(i)
+    if len(count)==0:
+      return True
+    else:
+      return False
+
+
+
+print(scrabble('jigokuhen','jigen'))
+print(scrabble('i am rain','raining'))
