@@ -1,0 +1,23 @@
+import numpy as np
+
+def single(num):
+    '''
+    taking an interger as input
+    we multiple the digits using numpy
+    till it is a single digits
+    and return how many times we did the multiplication
+    '''
+    count=0
+    for i in range (len(str(num))):
+        _list=list(str(num))
+        _list2=[int(i) for i in _list]
+        result= num
+        if result //10 >0:
+            count=count+1
+            result=np.prod(_list2)
+            num=result
+    return count
+        
+print(single(9319))   
+    
+        
