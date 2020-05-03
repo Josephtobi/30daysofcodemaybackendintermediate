@@ -1,0 +1,13 @@
+def mypackaging (zero,digit):
+    try:
+        if zero > len(str(digit)):
+            a=('0'*zero)+str(digit)
+            return a
+        elif zero <= len(str(digit)):
+            return digit
+    except:
+        return 'invalid input'
+            
+            
+print (mypackaging(5,22))
+print (mypackaging(1,22))
