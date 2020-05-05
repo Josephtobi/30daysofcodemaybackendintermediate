@@ -1,0 +1,29 @@
+def noSeven(num):
+    '''collecting input as int
+    we eliminate the number 7
+    and create 2 int that when added together 
+    returns the former string 
+    '''
+    try:
+        li=list(str(num))
+        li1=[]
+        li2=[]
+        for i in li:
+            if i =='7':
+                li1.append('5')
+                li2.append('2')
+            elif i =='-' and i == li[0]:
+                li1.append(i)
+                li2.append(i)
+            else:
+                li1.append(i)
+                li2.append('0')
+        li1=int(''.join(li1))
+        li2=int(''.join(li2))
+        return [li1,li2]
+    except:
+        return 'input must be integer in base 10'
+
+    
+print(noSeven(-70001))
+print(noSeven(71))
