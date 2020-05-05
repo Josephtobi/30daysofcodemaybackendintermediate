@@ -1,0 +1,33 @@
+def OptimusPrime(limit):
+  '''collecting an integer as limit we test for prime numbers using the sleeve of eratos returning a list of all prime numbers 
+   '''
+  try:
+    limit=int(limit)
+   # using the sleeve of eratos
+   #we first make all numbers true in the range of the limit
+    prime = [True for i in range(limit + 1)]
+    num = 2
+   #by the time we check all numbers to the 1/4 of the limit
+   #we should have crossed out all non prime numbers
+    while (num * num < limit+1):
+      # If it remain unchanged it is prime
+      if (prime[num] == True):
+         # updating all the multiples
+         for i in range(num * 2, limit + 1, num):
+            prime[i] = False
+      num += 1
+    prime[0]= False
+    prime[1]= False
+   # return all the prime numbers possible
+    li=[]
+    for num in range(limit + 1):
+      if prime[num]:
+         li.append(num)
+    return (li)
+  except:
+    return 'not an integer'
+
+      
+limit=(input('input your limit  '))
+print(OptimusPrime(limit))
+
