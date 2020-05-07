@@ -1,0 +1,36 @@
+def report(string):
+    '''collecting a string of expenses and cost
+    we return the total,average and balance after each expenses
+    
+    '''
+    
+    lis=string.split()
+    string=string.split()
+    string.append('n')
+    string.append('Neighbor')
+    string.append(50.00)
+    for i in range(0,len(string),3):
+        string[i]=float(string[i])
+    bal=float(string[0])
+    b=[]
+    for i in range(1,len(string)):
+        if type(string[i])==float:
+            b.append(string[i])
+            bal=bal-string[i]
+            string[i]=str(string[i]),'Balance:',str(bal)+','
+            string[i]='_'.join(string[i])
+    string[0]='Original Balance_'+ str(string[0])+','
+    ave=(sum(b))/len(b)
+    b='Total_expenses_'+str(sum(b))+','
+    ave='Average_expenses_'+str(ave)+','
+    string.append(b)
+    string.append(ave)
+    string='_'.join(string)
+    string=string.replace(',','\n')
+    return(string)
+
+
+
+
+
+print(report("1000.00 \n1 Market 125.45\n2 Hardware 34.95\n3 Video 7.45\n4 Book 14.32\n5 Gasoline 16.10"))
